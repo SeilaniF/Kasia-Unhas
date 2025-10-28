@@ -1,0 +1,83 @@
+/* Seção do portfólio */
+.portfolio-section {
+  padding: 80px 20px;
+  text-align: center;
+  background: #F2EBEE;
+}
+
+.portfolio-section h2 {
+  font-size: clamp(36px, 5vw, 50px);
+  margin-bottom: 40px;
+  color: #592E3E;
+  font-weight: bold;
+}
+
+/* Grid de quadrados */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card quadrado */
+.portfolio-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #F294B6;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  cursor: pointer;
+}
+
+/* Imagem principal */
+.portfolio-card .main-img {
+  width: 100%;
+  height: 250px;
+  padding:0px; /* dá espaço interno para não encostar nas bordas */
+  background: #fff; /* fundo neutro para preencher o espaço */
+  transition: opacity 0.5s ease;
+}
+
+
+/* Logo escondida */
+.portfolio-card .logo-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%;   /* menor que o quadrado */
+  height: auto;  /* menor que o quadrado */
+  transform: translate(-50%, -50%); /* centraliza */
+  object-fit: contain; /* evita distorção */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background: #fff; /* mantém limpo atrás da logo */
+}
+/* Troca no hover */
+.portfolio-card:hover .main-img {
+  opacity: 0;
+}
+
+.portfolio-card:hover .logo-img {
+  opacity: 1;
+}
+.portfolio-intro {
+  max-width: 1000px; /* pode aumentar ou até remover */
+  margin: 0 auto 40px auto;
+  font-size: 28px;
+  color: #592E3E;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInUp 1s forwards 0.3s;
+}
+
+
+/* Animação fade-in de baixo para cima */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

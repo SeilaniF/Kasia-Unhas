@@ -1,0 +1,95 @@
+/* Header padrão */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 50px;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* permite quebrar links em múltiplas linhas */
+  z-index: 1000;
+  transition: background 0.3s ease, padding 0.3s ease;
+}
+
+.header.scrolled {
+  background: #f2ebee;
+  padding: 15px 40px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.header .logo img {
+  width: 190px;
+  height: 100px;
+  border-radius: 50%;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.header .logo img:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  flex-wrap: wrap; /* permite quebrar em várias linhas */
+  justify-content: center; /* centraliza os links em múltiplas linhas */
+}
+
+.header nav ul li a {
+  text-decoration: none;
+  color: #4d2533;
+  font-weight: bold;
+  font-size: 23px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.header nav ul li a:hover {
+  color: #eebacd;
+}
+
+.header nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background-color: #F294B6;
+  transition: width 0.3s ease;
+}
+
+.header nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Telas médias */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* mantém logo acima */
+    align-items: center;    /* centraliza logo */
+    padding: 10px 20px;
+  }
+
+  .header .logo img {
+    width: 120px;
+    height: 70px;
+    margin-bottom: 10px; /* espaço entre logo e menu */
+  }
+
+  .header nav ul {
+    flex-direction: row;   /* links em linha */
+    flex-wrap: nowrap;     /* não quebra linha */
+    gap: 15px;             /* espaço menor entre links */
+    justify-content: center;
+  }
+
+  .header nav ul li a {
+    font-size: 16px;       /* reduz tamanho da fonte para caber */
+  }
+}

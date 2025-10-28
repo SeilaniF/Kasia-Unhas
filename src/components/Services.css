@@ -1,0 +1,85 @@
+.services-section {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #F2EBEE;
+}
+
+.services-section h2 {
+  font-size: clamp(40px, 6vw, 60px); /* título maior e responsivo */
+  color: #592E3E;
+  margin-bottom: 50px;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-card {
+  background-color: #F294B6;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+  animation: fadeInUp 1s ease forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.services-card img {
+  width: 100%;
+  height: 220px; /* aumentei para melhor proporção */
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.services-card h3 {
+  font-size: 26px; /* título maior */
+  margin: 15px 0 10px;
+  color: #592E3E;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.services-card p {
+  font-size: 22px; /* texto maior e mais legível */
+  color: #592E3E;
+  line-height: 1.6;
+  padding: 0 15px 20px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover para todo o card */
+.services-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  background-color: #E67E9C;
+}
+
+.services-card:hover h3,
+.services-card:hover p {
+  color: #fff; /* muda a cor do texto ao passar o mouse */
+  transform: scale(1.03);
+}
+
+/* Hover na imagem */
+.services-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Animações */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

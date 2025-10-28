@@ -1,0 +1,37 @@
+/* WhatsAppButton.css */
+.whatsapp-button {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+  animation: pulse 1.5s infinite; /* pulsar */
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.2);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  }
+}
