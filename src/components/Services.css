@@ -5,7 +5,7 @@
 }
 
 .services-section h2 {
-  font-size: clamp(40px, 6vw, 60px); /* título maior e responsivo */
+  font-size: clamp(40px, 6vw, 50px); /* título maior e responsivo */
   color: #592E3E;
   margin-bottom: 50px;
   animation: fadeIn 1.5s ease forwards;
